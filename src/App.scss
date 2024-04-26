@@ -1,9 +1,28 @@
-#root {
-  max-width: 1280px;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #000000;
+  background: linear-gradient(to bottom, #60695f 0%, #9eab91 50%, #60695f 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
   margin: 0 auto;
   padding: 32px;
-  text-align: center;
-  font-size: 16px;
+  max-width: 1280px;
   background-color: #edf0f5;
   border-radius: 8px;
   position: relative;
@@ -25,7 +44,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px
+  gap: 10px;
 }
 
 .main {
@@ -42,24 +61,6 @@
 }
 
 .title {
-  color: #8c959c;
   font-size: 20px;
-}
-
-.tag {
-  margin: 0;
-  padding: 10px 20px;
-  background-color: #ffffff;
-  color: #666666;
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0px;
-    height: 100%;
-    width: 4px;
-    background-color: #a9b9d1;
-  }
+  color: #838d94;
 }

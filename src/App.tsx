@@ -2,13 +2,12 @@ import { useState } from 'react';
 import './App.scss';
 import { tagsData } from './constants/tags';
 import { CiCloudOn } from "react-icons/ci";
+import { TagCloud } from './components/TagCloud/TagCloud';
 
 const tagsStructure: string[] = tagsData;
 
 function App() {
   const [tags, setTags] = useState<string[]>(tagsStructure);
-
-  console.log(tags);
 
   return (
     <>
@@ -18,7 +17,7 @@ function App() {
         </div>
         <div className="main">
           {
-            tags.map((tag, index: number) => <p className="tag" key={index}>{tag}</p>)
+            tags.map((tag, index: number) => <TagCloud key={index} tag={tag}/>)
           }
         </div>
       </div>
