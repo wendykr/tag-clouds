@@ -1,3 +1,4 @@
+import { Button } from '../Button/Button';
 import { Input } from '../Input/Input';
 import './Form.scss';
 
@@ -11,11 +12,14 @@ interface FormProps {
 }
 
 export const Form: React.FC<FormProps> = ({ handleChange, handleSubmit, handleDelete, isDisabled, newTag, tags }) => {
+
+  const isFalse = tags.length === 0;
+
   return (
     <form className="form">
       <Input handleChange={handleChange} newTag={newTag} />
-      <button className="button" type="submit" onClick={handleSubmit} disabled={isDisabled}>Add</button>
-      <button className="button" type="submit" onClick={handleDelete} disabled={tags.length === 0}>Delete</button>
+      <Button name="Add" onClick={handleSubmit} disabled={isDisabled} />
+      <Button name="Delete" onClick={handleDelete} disabled={isFalse} />
     </form>
   )
 }

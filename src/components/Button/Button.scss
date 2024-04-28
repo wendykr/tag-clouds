@@ -1,0 +1,21 @@
+.button {
+  padding: 8px 12px;
+  color: #ffffff;
+  background-color: #009ddb;
+  font-size: 14px;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  border: none;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #0085b9;
+    
+  }
+}
+
+.button:disabled {
+  background-color: #bbbbbb;
+  cursor: initial;
+}
