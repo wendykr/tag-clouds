@@ -21,6 +21,7 @@ function App() {
     event.preventDefault();
     setTags([...tags, newTag]);
     setNewTag('');
+    setIsDisabled(true);
   }
 
   const handleDelete = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
