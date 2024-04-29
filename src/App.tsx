@@ -3,6 +3,7 @@ import './App.scss';
 import { tagsData } from './constants/tags';
 import { CiCloudOn } from "react-icons/ci";
 import { TagCloud } from './components/TagCloud/TagCloud';
+import { Form } from './components/Form/Form';
 
 const tagsStructure: string[] = tagsData;
 
@@ -34,14 +35,7 @@ function App() {
 
   return (
     <>
-      <form className="form">
-        <label className="form__label">
-          <p className="form__label--name">Tag name: </p>
-          <input className="form__field" value={newTag} name="name" onChange={handleChange} />
-        </label>
-        <button className="button" type="submit" onClick={handleSubmit} disabled={isDisabled}>Add</button>
-        <button className="button" type="submit" onClick={handleDelete} disabled={tags.length === 0}>Delete</button>
-      </form>
+      <Form handleChange={handleChange} handleSubmit={handleSubmit} handleDelete={handleDelete} isDisabled={isDisabled} newTag={newTag} tags={tags} />
       <div className="container">
         <div className="head">
           <CiCloudOn className="icon-cloud" /> <span className="title">tag cloud</span>
