@@ -1,30 +1,11 @@
-# React + TypeScript + Vite
+# Práce se stavovými hodnotami - imutable/spread
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Tagy
+Vyrobte v Reactu komponentu `TagCloud`, která bude umět zobrazovat tagy jako na obrázku.
 
-Currently, two official plugins are available:
+![Ukázka možného výsledku](https://kodim.cz/cms/assets/czechitas/react-2/lekce/hodnoty-stav/cv-react/tagcloud/tagcloud.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. Založte novou React aplikace a vytvořte komponentu `TagCloud`.
+2. Tagy uložte do stavu `tags` jako pole řetězců.
+3. Přidejte do komponenty formulář s textovým políčkem, pomocí kterého bude možné zadat nový tag. Při odeslání formuláře přidejte nový tag na konec pole ve stavu `tags`. Dejte pozor, aby pole zůstalo immutable. Při přidání tagu vždy vyrobte nové pole pomocí spreadu.
+4. Přidejte do komponenty tlačítko, které odstraní první tag ze seznamu. Opět zachovejte imutabilitu stavu.
