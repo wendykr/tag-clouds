@@ -1,3 +1,4 @@
+import { TagsStructure } from '../../App';
 import { Button } from '../Button/Button';
 import { Input } from '../Input/Input';
 import './Form.scss';
@@ -8,7 +9,7 @@ interface FormProps {
   handleDelete: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   isDisabled: boolean;
   newTag: string;
-  tags: string[];
+  tags: TagsStructure[];
 }
 
 export const Form: React.FC<FormProps> = ({ handleChange, handleSubmit, handleDelete, isDisabled, newTag, tags }) => {

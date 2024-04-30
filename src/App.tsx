@@ -5,10 +5,13 @@ import { CiCloudOn } from "react-icons/ci";
 import { TagCloud } from './components/TagCloud/TagCloud';
 import { Form } from './components/Form/Form';
 
-const tagsStructure: string[] = tagsData;
+export interface TagsStructure {
+  name: string;
+  color: string;
+}
 
 function App() {
-  const [tags, setTags] = useState<string[]>(tagsStructure);
+  const [tags, setTags] = useState<TagsStructure[]>(tagsData);
   const [newTag, setNewTag] = useState<string>('');
   const [isDisabled, setIsDisabled] = useState<boolean>(true);
 
@@ -19,7 +22,7 @@ function App() {
 
   const handleSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();
-    setTags([...tags, newTag]);
+    setTags([...tags, {name: newTag, color: 'cfd7e6'}]);
     setNewTag('');
     setIsDisabled(true);
   }
@@ -44,7 +47,7 @@ function App() {
         <div className="main">
         {
           tags.length > 0 ? (
-            tags.map((tag, index: number) => <TagCloud key={index} tag={tag} />)
+            tags.map((tag, index: number) => <TagCloud key={index} name={tag.name} color={tag.color} />)
           ) : (
             <p>No found tags</p>
           )

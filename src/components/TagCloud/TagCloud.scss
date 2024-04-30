@@ -1,17 +1,18 @@
 .tag {
-  margin: 0;
-  padding: 10px 20px;
-  background-color: #ffffff;
-  color: #666666;
   position: relative;
 
-  &::before {
-    content: '';
+  &__name {
+    margin: 0;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #666666;
+  }
+
+  &__stripe {
     position: absolute;
     top: 0;
-    left: 0px;
+    left: 0;
     height: 100%;
     width: 4px;
-    background-color: #a9b9d1;
   }
 }
